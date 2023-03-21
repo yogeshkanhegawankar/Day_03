@@ -1,0 +1,136 @@
+Move files from one folder to the Respective Folder.
+a) Create files in current directory or any temporary directory.abc.txt,def.txt,ghi.txt,jkl.txt
+=> mkdir abc.txt drf.txt ghi.txt jkl.txt
+-------------------------------------
+b)Print list of files to move.
+=>ls
+TerminalCommands/  abc.txt  def.txt  ghi.txt  jkl.txt  linux-content/  temp/
+---------------------------------------
+c)Segregate basename and extension.
+=> $ basename abc.txt .txt
+abc
+
+Yogesh@DESKTOP-729HECG MINGW64 ~/TerminalCommands (main)
+$ basename def.txt .txt
+def
+
+Yogesh@DESKTOP-729HECG MINGW64 ~/TerminalCommands (main)
+$ basename ghi.txt .txt
+ghi
+
+Yogesh@DESKTOP-729HECG MINGW64 ~/TerminalCommands (main)
+$ basename jkl.txt .txt
+jkl
+-------------------------------------------
+d)Create directory using basename.
+$ mkdir abc def ghi jkl
+--------------------------------------------
+e)Move file to newly created folder
+=>$ mv abc.txt abc
+
+$ mv def.txt def
+
+$ mv ghi.txt ghi
+
+$ mv jkl.txt jkl
+---------------------------------------------
+=====================================================
+Appemd current date to all log files name which has extension .log.1 from a folder
+=>
+
+          append_date.sh
+#!/bin/sh
+#Append current date to all log files name which has extension .log.1
+#from a folder
+
+file_name=test_files.log.1
+
+current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+echo "Current Time : $current_time"
+
+new_fileName=$file_name.$current_time
+echo "New FileName: " "$new_fileName"
+
+cp $file_name $new_fileName
+echo "You should see new file generated with timestamp on it.."
+-----------------------------------------------------
+=====================================================
+archive the files from /var/log folder which have modified 7 days go and move it to your backup flder
+=>
+$ find /sourcedirectory -maxdepth 1 -mtime +365 -exec mv "{}" /destination/directory/ \;
+
+-----------------------------------------------------	Check if a folder exists or not.If it's not present create it
+=>							$ test -d "/TerminalCommands/temp/" && echo "Found/Exist" || echo "Does Not Exist" | mkdir temp
+
+----------------------------------------------------	Execute command "hello" and "ls" and check its execution status and print whether command executed successfully or not.
+=>
+$ hello
+bash: hello: command not found
+
+
+$ ls
+'3D Objects'/
+ Addition.sh
+ AppData/
+'Application Data'@
+ Contacts/
+ Cookies@
+ Desktop/
+ Documents/
+ Downloads/
+ EvenNumbers.sh
+ Favorites/
+ ForHello5Times.sh
+ ForLoop.sh
+ IdeaProjects/
+ IfStatement.sh
+ IntelGraphicsProfiles/
+ Links/
+'Local Settings'@
+ MicrosoftEdgeBackups/
+ Music/
+'My Documents'@
+ NTUSER.DAT
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+ NetHood@
+ Number
+ Number.sh
+ Numbers.sh
+ OneDrive/
+ Oracle/
+ Pictures/
+ PrintHood@
+ QuickLink/
+ Random.sh
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+'Start Menu'@
+ Templates@
+ TerminalCommands/
+ Tracing/
+ UsrInput.sh
+ Videos/
+ append_date.sh*
+ casestatement.sh
+ eclipse/
+ eclipse-workspace/
+ fFloat.sh
+ foriLoop.sh
+ forinLoop.sh
+ function.sh
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ ntuser.ini
+ temp/
+ w.java
+ whileLoop.sh
+ whileLoopUsrInput.sh
+----------------------------------------------------
+=====================================================
+Set environment usersecret ="dH34xJaa23" if its already not set
+=>
+								  
