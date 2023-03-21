@@ -55,14 +55,17 @@ cp $file_name $new_fileName
 echo "You should see new file generated with timestamp on it.."
 -----------------------------------------------------
 =====================================================
-archive the files from /var/log folder which have modified 7 days go and move it to your backup flder
+Archive the files from /var/log folder which have modified 7 days go and move it to your backup flder
 =>
 $ find /sourcedirectory -maxdepth 1 -mtime +365 -exec mv "{}" /destination/directory/ \;
 
------------------------------------------------------	Check if a folder exists or not.If it's not present create it
-=>							$ test -d "/TerminalCommands/temp/" && echo "Found/Exist" || echo "Does Not Exist" | mkdir temp
+-----------------------------------------------------	
+Check if a folder exists or not.If it's not present create it
+=>							
+$ test -d "/TerminalCommands/temp/" && echo "Found/Exist" || echo "Does Not Exist" | mkdir temp
 
-----------------------------------------------------	Execute command "hello" and "ls" and check its execution status and print whether command executed successfully or not.
+----------------------------------------------------	
+Execute command "hello" and "ls" and check its execution status and print whether command executed successfully or not.
 =>
 $ hello
 bash: hello: command not found
